@@ -7,11 +7,13 @@
 		
 		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css">
-
+		<link rel="stylesheet" href="css/prettify.css" type="text/css">
+		
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/d3.v2.js"></script>
 		<script type="text/javascript" src="js/d3.topological.js"></script>
+		<script type="text/javascript" src="js/prettify.js"></script>
 		
 		<style type="text/css">
 			.node {
@@ -44,6 +46,11 @@
 				color: #222222;
 			}
 		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				window.prettyPrint() && prettyPrint();
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -92,7 +99,7 @@
 						});
 					</script>
 					
-					<pre>
+					<pre class="prettyprint linenums">
 [
 	{
 		"label": "choosing clothes",
@@ -131,7 +138,7 @@
 					
 					<p>The algorithm is based on a depth first search on the given graph:</p>
 					
-					<pre>
+					<pre class="prettyprint linenums">
 function topologicalDFS(node, number) {
 	node.color = 'gray';
 	node.dependencies.forEach(function(key) {
@@ -150,7 +157,7 @@ function topologicalDFS(node, number) {
 					
 					<p>If the data is given as shown above and <code>d3.topological.js</code> is included:</p>
 					
-					<pre>
+					<pre class="prettyprint linenums">
 d3.json('data.json', function(nodes) {
 	// The data is given as shown above.
 	// The algorithm adds a number property to each node.
